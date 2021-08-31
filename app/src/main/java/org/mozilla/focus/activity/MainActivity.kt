@@ -55,6 +55,14 @@ open class MainActivity : LocaleAwareAppCompatActivity() {
 
         val intent = SafeIntent(intent)
 
+        // The performance check was added after the shouldShowFirstRun to take as much of the
+        // code path as possible
+        if (Settings.getInstance(this).shouldShowFirstrun() &&
+            !Performance.processIntentIfPerformanceTest(intent, this)
+        ) {
+            components.appStore.dispatch(AppAction.ShowFirstRun)
+        }
+
         if (intent.hasExtra(HomeScreen.ADD_TO_HOMESCREEN_TAG)) {
             intentProcessor.handleNewIntent(this, intent)
         }
