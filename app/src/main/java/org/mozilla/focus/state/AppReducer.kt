@@ -147,13 +147,6 @@ private fun openTab(state: AppState, action: AppAction.OpenTab): AppState {
     )
 }
 
-/**
- * The list of [TopSite] has changed.
- */
-private fun topSitesChanged(state: AppState, action: AppAction.TopSitesChange): AppState {
-    return state.copy(topSites = action.topSites)
-}
-
 @Suppress("ComplexMethod")
 private fun navigateUp(state: AppState, action: AppAction.NavigateUp): AppState {
     if (state.screen !is Screen.Settings) {

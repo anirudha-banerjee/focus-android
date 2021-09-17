@@ -62,7 +62,7 @@ class Components(
 ) {
     val appStore: AppStore by lazy {
         AppStore(AppState(
-            screen = determineInitialScreen(context)
+            screen = Screen.Home
         ))
     }
 

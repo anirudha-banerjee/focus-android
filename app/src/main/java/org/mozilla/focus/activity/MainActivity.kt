@@ -22,6 +22,7 @@ import org.mozilla.focus.fragment.UrlInputFragment
 import org.mozilla.focus.locale.LocaleAwareAppCompatActivity
 import org.mozilla.focus.navigation.MainActivityNavigation
 import org.mozilla.focus.navigation.Navigator
+import org.mozilla.focus.perf.Performance
 import org.mozilla.focus.session.IntentProcessor
 import org.mozilla.focus.session.ui.TabSheetFragment
 import org.mozilla.focus.shortcut.HomeScreen
