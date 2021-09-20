@@ -47,6 +47,8 @@ open class MainActivity : LocaleAwareAppCompatActivity() {
 
     private var previousSessionCount = 0
 
+    private val EXTRA_IS_PERFORMANCE_TEST = "performancetest"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -124,7 +126,8 @@ open class MainActivity : LocaleAwareAppCompatActivity() {
         }
 
         // If needed show the first run tour on top of the browser or url input fragment.
-        if (Settings.getInstance(this@MainActivity).shouldShowFirstrun() && !isCustomTabMode) {
+        if (Settings.getInstance(this@MainActivity).shouldShowFirstrun() && !isCustomTabMode
+            && !intent.getBooleanExtra(EXTRA_IS_PERFORMANCE_TEST, false)) {
             showFirstrun(components.sessionManager.selectedSession)
         }
     }
